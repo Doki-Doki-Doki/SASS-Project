@@ -17,16 +17,79 @@
             font-size:3rem;
         }
         ul{
-            display: none;
+            display: none; 
         }
-    }
-    &__nav{
-        display: none;
     }
     &__actions{
         display: flex;
         align-items: center;
         gap: 2rem;
+        .header__nav{
+            position: absolute;
+            background: $clr-light;
+            right: -100rem;
+            top: 0rem;
+            width: 100%;
+            height: 100vh;
+            transition: .5s ease;
+            padding: 0 2rem;
+            img{
+                padding: 1.5rem 0;
+                width: 150;
+                margin: 1rem 0;
+            }
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                text-align: center;
+                li{
+                    padding: 1.75rem;
+                    text-align: left;
+                    a{
+                        font-size: 1.5rem;
+                        font-family: $ff-primary;
+                        color: $clr-dark;
+                        font-weight: 600;
+                        /*font: $ff-primary;*/
+                    }
+                }
+                li:hover{
+                    background: $clr-light;
+                    a:after{
+                        width: 0%;
+                        height: .2rem;
+                        background-color: $clr-light;
+                        display: block;
+                        transition: .5s ease;
+                    }
+                }
+            }
+            &__btn{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                a{
+                    font-family: $ff-primary; 
+                    border: 1px solid $clr-primary;
+                    border-radius: 0.5rem;
+                    text-align: center;
+                    vertical-align: middle;
+                    height: 6rem;
+                }
+                a:first-child{
+                    color: $clr-primary;
+                }
+                a:last-child{
+                    color: $clr-light;
+                    background: $clr-primary;
+                }
+            }
+        }
+        .header__nav.open{
+            right: 0rem;
+            transition: .5s ease;
+        }
         a{
             i{
                 color: $clr-light;
@@ -44,9 +107,14 @@
                 }
             }
         }
-
+        .toggle__menu.open{
+            span:nth-child(2){
+                opacity: 0;
+                transition: .5s ease;
+            }
+        }
         &__btn{
-            display: none;
+            display:none;
         }
     }
 }
