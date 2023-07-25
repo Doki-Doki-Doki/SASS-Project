@@ -65,22 +65,21 @@ body {
   width: 100%;
   height: 100vh;
   transition: 0.5s ease;
-  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
 }
 .header__actions .header__nav img {
-  padding: 1.5rem 0;
+  padding: 2.5rem;
   width: 150;
-  margin: 1rem 0;
+  margin-bottom: 1.5rem;
 }
 .header__actions .header__nav ul {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  text-align: center;
+  margin-top: 6rem;
 }
 .header__actions .header__nav ul li {
-  padding: 1.75rem;
-  text-align: left;
+  padding: 2rem;
 }
 .header__actions .header__nav ul li a {
   font-size: 1.5rem;
@@ -102,7 +101,11 @@ body {
 .header__actions .header__nav__btn {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  margin-top: 23rem;
+  filter: drop-shadow(0px -5px 2px #D9D9DA);
+  background: #ffffff;
+  padding: 5rem 4rem;
 }
 .header__actions .header__nav__btn a {
   font-family: "Raleway", sans-serif;
@@ -110,7 +113,9 @@ body {
   border-radius: 0.5rem;
   text-align: center;
   vertical-align: middle;
-  height: 6rem;
+  padding: 1.75rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 .header__actions .header__nav__btn a:first-child {
   color: hsl(294, 54%, 27%);
@@ -126,6 +131,9 @@ body {
 .header__actions a i {
   color: hsl(0, 0%, 100%);
 }
+.header__actions .toggle__menu {
+  z-index: 999;
+}
 .header__actions .toggle__menu span {
   width: 3rem;
   height: 0.3rem;
@@ -134,12 +142,42 @@ body {
   border-radius: 5rem;
 }
 .header__actions .toggle__menu span:nth-child(2) {
-  margin: 0.3rem 0;
+  margin: 0.5rem 0;
+}
+.header__actions .toggle__menu.open span {
+  background-color: hsl(0, 0%, 0%);
+  width: 2rem;
+}
+.header__actions .toggle__menu.open span:first-child {
+  transform: translateY(10px) rotate(45deg);
+  transition: 0.5s ease;
 }
 .header__actions .toggle__menu.open span:nth-child(2) {
   opacity: 0;
   transition: 0.5s ease;
 }
+.header__actions .toggle__menu.open span:last-child {
+  transform: translateY(-6px) rotate(-45deg);
+  transition: 0.5s ease;
+}
 .header__actions__btn {
   display: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.5rem 1rem;
+  border: 1px solid transparent;
+  color: hsl(0, 0%, 0%);
+  font-weight: 550;
+}
+.btn.bg--primary {
+  background: hsl(294, 54%, 27%);
+  color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 100%);
+}
+.btn.bg--light {
+  background: hsl(0, 0%, 100%);
+  color: hsl(294, 54%, 27%);
+  border: 1px solid hsl(294, 54%, 27%);
 }/*# sourceMappingURL=main.css.map */
