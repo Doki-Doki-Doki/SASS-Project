@@ -20,6 +20,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.4;
   font-family: "Raleway", sans-serif;
+  height: 10000px;
 }
 
 .container {
@@ -31,8 +32,21 @@ body {
 /*COMPONENTS*/
 .header {
   background: hsl(294, 54%, 27%);
+  position: relative;
   position: fixed;
   width: 100%;
+}
+.header .container {
+  transition: 1s ease;
+}
+.header.white {
+  background: transparent;
+}
+.header.white .container {
+  background: blue;
+  border-radius: 3rem;
+  margin-top: 5rem;
+  transition: 2s ease;
 }
 .header__wrapper {
   display: flex;
@@ -54,12 +68,7 @@ body {
 .header .branding ul {
   display: none;
 }
-.header__actions {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-.header__actions__nav {
+.header__nav {
   position: absolute;
   background: hsl(0, 0%, 100%);
   right: -100rem;
@@ -68,20 +77,20 @@ body {
   height: 100vh;
   transition: 0.5s ease;
 }
-.header__actions__nav img {
+.header__nav img {
   padding: 2rem;
   width: 15rem;
 }
-.header__actions__nav ul.nav {
+.header__nav ul.nav {
   display: flex;
   flex-direction: column;
   margin-top: 6rem;
   margin-bottom: 5rem;
 }
-.header__actions__nav ul.nav li {
+.header__nav ul.nav li {
   padding: 2rem;
 }
-.header__actions__nav ul.nav li a {
+.header__nav ul.nav li a {
   font-size: 2rem;
   font-family: "Raleway", sans-serif;
   color: hsl(0, 0%, 0%);
@@ -90,81 +99,69 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.header__actions__nav ul.nav li a i {
+.header__nav ul.nav li a i {
   color: hsl(0, 0%, 0%);
 }
-.header__actions__nav ul.nav li a i.open {
+.header__nav ul.nav li a i.open {
   transform: rotate(90deg);
   transition: 0.5s ease;
 }
-.header__actions__nav ul.nav li:hover {
-  background: hsl(0, 0%, 100%);
-}
-.header__actions__nav ul.nav li:hover a:after {
-  width: 0%;
-  height: 0.2rem;
-  background-color: hsl(0, 0%, 100%);
-  display: block;
-  transition: 0.5s ease;
-}
-.header__actions__nav ul.nav ul.drop {
-  background: red;
+.header__nav ul.nav ul.drop {
   margin: 0 3rem;
   max-height: 0rem;
   overflow: hidden;
+  transition: 0.5s ease;
 }
-.header__actions__nav ul.nav ul.drop li a {
-  font-size: 1rem;
+.header__nav ul.nav ul.drop li a {
+  font-size: 1.5rem;
 }
-.header__actions__nav__btn {
+.header__nav ul.nav ul.drop.open {
+  max-height: 50rem;
+  transition: 0.5s ease;
+}
+.header__nav__btn {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 23rem;
-  filter: drop-shadow(0px -5px 2px #D9D9DA);
-  background: #ffffff;
-  padding: 5rem 4rem;
-}
-.header__actions__nav__btn a {
-  font-family: "Raleway", sans-serif;
-  border: 1px solid hsl(294, 54%, 27%);
-  border-radius: 0.5rem;
   text-align: center;
-  vertical-align: middle;
-  padding: 1.75rem 0;
-  font-size: 1.5rem;
-  font-weight: 700;
+  gap: 2rem;
+  position: absolute;
+  width: 100%;
+  padding: 2rem;
+  bottom: 3rem;
 }
-.header__actions__nav__btn a:first-child {
-  color: hsl(294, 54%, 27%);
-}
-.header__actions__nav__btn a:last-child {
-  color: hsl(0, 0%, 100%);
-  background: hsl(294, 54%, 27%);
-}
-.header__actions .header__nav.open {
-  right: 0rem;
+.header__nav.open {
+  right: 0;
   transition: 0.5s ease;
+}
+.header__actions__btn {
+  display: flex;
+}
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 .header__actions a i {
   color: hsl(0, 0%, 100%);
 }
 .header__actions .toggle__menu {
   z-index: 999;
+  display: block;
 }
 .header__actions .toggle__menu span {
   width: 3rem;
-  height: 0.3rem;
+  height: 0.2rem;
   background-color: hsl(0, 0%, 100%);
   display: block;
   border-radius: 5rem;
+  transition: 0.5s ease;
 }
 .header__actions .toggle__menu span:nth-child(2) {
-  margin: 0.5rem 0;
+  margin: 0.4rem 0;
 }
 .header__actions .toggle__menu.open span {
+  color: hsl(0, 0%, 0%);
   background-color: hsl(0, 0%, 0%);
-  width: 2rem;
 }
 .header__actions .toggle__menu.open span:first-child {
   transform: translateY(10px) rotate(45deg);
@@ -175,11 +172,50 @@ body {
   transition: 0.5s ease;
 }
 .header__actions .toggle__menu.open span:last-child {
-  transform: translateY(-6px) rotate(-45deg);
+  transform: translateY(-2px) rotate(-45deg);
   transition: 0.5s ease;
 }
 .header__actions__btn {
   display: none;
+}
+@media screen and (min-width: 940px) {
+  .header__nav {
+    display: none;
+  }
+  .header .branding ul {
+    display: flex;
+    gap: 2rem;
+    margin-left: 5rem;
+  }
+  .header .branding ul li {
+    transition: 0.5s ease;
+  }
+  .header .branding ul li a {
+    color: hsl(0, 0%, 100%);
+    font-weight: 600;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .header .branding ul li a i {
+    font-size: 1rem;
+  }
+  .header .branding ul li:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease;
+  }
+  .header__actions .toggle__menu {
+    display: none;
+  }
+  .header__actions__btn {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .header__actions__btn a.sign {
+    color: hsl(0, 0%, 100%);
+  }
 }
 
 .btn {
@@ -188,14 +224,64 @@ body {
   border: 1px solid transparent;
   color: hsl(0, 0%, 0%);
   font-weight: 550;
+  position: relative;
+  border-radius: 1rem;
 }
 .btn.bg--primary {
   background: hsl(294, 54%, 27%);
   color: hsl(0, 0%, 100%);
   border: 1px solid hsl(0, 0%, 100%);
 }
+.btn.bg--primary::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  background-color: hsl(0, 0%, 100%);
+  transform-origin: left;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s ease;
+  z-index: -1;
+  border-radius: 1rem;
+}
+.btn.bg--primary:hover::before {
+  width: 100%;
+  transition: 0.5s ease;
+}
+.btn.bg--primary:hover {
+  color: hsl(294, 54%, 27%);
+  z-index: 999;
+  border: 1px solid hsl(294, 54%, 27%);
+  transition: 0.5s ease;
+}
 .btn.bg--light {
   background: hsl(0, 0%, 100%);
   color: hsl(294, 54%, 27%);
   border: 1px solid hsl(294, 54%, 27%);
+}
+.btn.bg--light::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  background-color: hsl(294, 54%, 27%);
+  transform: skewX(45degrees);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s ease;
+  z-index: -1;
+  border-radius: 1rem;
+}
+.btn.bg--light:hover::before {
+  width: 100%;
+  transition: 0.5s ease;
+}
+.btn.bg--light:hover {
+  color: hsl(0, 0%, 100%);
+  z-index: 999;
+  border: 1px solid hsl(0, 0%, 100%);
+  transition: 0.5s ease;
 }/*# sourceMappingURL=main.css.map */

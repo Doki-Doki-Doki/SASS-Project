@@ -1,7 +1,20 @@
 .header{
     background: $clr-primary;
+    position: relative;
     position: fixed;
     width: 100%;
+    .container{
+        transition: 1s ease;
+    }
+    &.white{
+        background: transparent;
+        .container{
+            background: blue;
+            border-radius: 3rem;
+            margin-top: 5rem;
+            transition: 2s ease;
+        }
+    }
     &__wrapper{
         display: flex;
         align-items: center;
@@ -81,95 +94,60 @@
             gap: 2rem;
             position: absolute;
             width: 100%;
+            padding: 2rem;
+            bottom: 3rem;
         }
-                li:hover{
-                    background: $clr-light;
-                    a:after{
-                        width: 0%;
-                        height: .2rem;
-                        background-color: $clr-light;
-                        display: block;
-                        transition: .5s ease;
-                    }
-                }
-                ul.drop{
-                    background: red;
-                    margin: 0 3rem;
-                    max-height: 0rem;
-                    overflow: hidden;
-                    li{
-                        a{
-                            font-size: 1rem;
-                        }
-                    }
-                }
-            }        
-            &__btn{
-                display: flex;
-                flex-direction: column;
-                gap: 1.5rem;
-                margin-top: 23rem;
-                filter: drop-shadow(0px -5px 2px #D9D9DA);
-                background: #ffffff;
-                padding: 5rem 4rem;
-                a{
-                    font-family: $ff-primary; 
-                    border: 1px solid $clr-primary;
-                    border-radius: 0.5rem;
-                    text-align: center;
-                    vertical-align: middle;
-                    padding: 1.75rem 0;
-                    font-size: 1.5rem;
-                    font-weight: 700;
-                    &:first-child{
-                        color: $clr-primary;
-                    }
-                    &:last-child{
-                        color: $clr-light;
-                        background: $clr-primary;
-                    }
-                }
-            }
+        &.open{
+            right: 0;
+            transition: 0.5s ease;
         }
-        .header__nav.open{
-            right: 0rem;
-            transition: .5s ease;
+    }
+    &__actions{
+        &__btn{
+            display: flex;
         }
+    }
+    &__actions{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
         a{
             i{
                 color: $clr-light;
             }
         }
         .toggle__menu{
-            z-index:999;
+            z-index: 999;
+            display: block;
             span{
                 width: 3rem;
-                height: .3rem;
+                height: 0.2rem;
                 background-color: $clr-light;
                 display: block;
                 border-radius: 5rem;
+                transition: .5s ease;
                 &:nth-child(2){
-                    margin: .5rem 0;
+                    margin: 0.4rem 0;
+                }
+            }
+        &.open{
+            span{
+                color: $clr-dark;
+                background-color: $clr-dark;
+                &:first-child{
+                    transform: translateY(10px) rotate(45deg);
+                    transition: .5s ease;
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                    transition: .5s ease;
+                }
+                &:last-child{
+                    transform: translateY(-2px) rotate(-45deg);
+                    transition: .5s ease;
                 }
             }
         }
-        .toggle__menu.open{
-            span{
-                background-color: $clr-dark;
-                width: 2rem;
-            }
-            span:first-child{
-                transform: translateY(10px) rotate(45deg);
-                transition: .5s ease;
-            }
-            span:nth-child(2){
-                opacity: 0;
-                transition: .5s ease;
-            }
-            span:last-child{
-                transform: translateY(-6px) rotate(-45deg);
-                transition: .5s ease;
-            }
         }
         &__btn{
             display:none;
@@ -178,6 +156,44 @@
     @include mediaQuery($break-lg){
         &__nav{
             display: none;
+        }
+        .branding{
+            ul{
+                display: flex;
+                gap: 2rem;
+                margin-left: 5rem;
+                li{
+                    transition: .5s ease;
+                    a{
+                        color: $clr-light;
+                        font-weight: 600;
+                        font-size: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: .5rem;
+                        i{
+                            font-size: 1rem;
+                        }
+                    }
+                    &:hover{
+                        transform: scale(1.1);
+                        transition: .5s ease;
+                    } 
+                }
+            }
+        }
+        &__actions{
+            .toggle__menu{
+                display: none;
+            }
+            &__btn{
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                a.sign{
+                    color: $clr-light;
+                }
+            }
         }
     }
 }
