@@ -31,6 +31,8 @@ body {
 /*COMPONENTS*/
 .header {
   background: hsl(294, 54%, 27%);
+  position: fixed;
+  width: 100%;
 }
 .header__wrapper {
   display: flex;
@@ -57,7 +59,7 @@ body {
   align-items: center;
   gap: 2rem;
 }
-.header__actions .header__nav {
+.header__actions__nav {
   position: absolute;
   background: hsl(0, 0%, 100%);
   right: -100rem;
@@ -65,40 +67,56 @@ body {
   width: 100%;
   height: 100vh;
   transition: 0.5s ease;
-  display: flex;
-  flex-direction: column;
 }
-.header__actions .header__nav img {
-  padding: 2.5rem;
-  width: 150;
-  margin-bottom: 1.5rem;
+.header__actions__nav img {
+  padding: 2rem;
+  width: 15rem;
 }
-.header__actions .header__nav ul {
+.header__actions__nav ul.nav {
   display: flex;
   flex-direction: column;
   margin-top: 6rem;
+  margin-bottom: 5rem;
 }
-.header__actions .header__nav ul li {
+.header__actions__nav ul.nav li {
   padding: 2rem;
 }
-.header__actions .header__nav ul li a {
-  font-size: 1.5rem;
+.header__actions__nav ul.nav li a {
+  font-size: 2rem;
   font-family: "Raleway", sans-serif;
   color: hsl(0, 0%, 0%);
   font-weight: 600;
-  /*font: $ff-primary;*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.header__actions .header__nav ul li:hover {
+.header__actions__nav ul.nav li a i {
+  color: hsl(0, 0%, 0%);
+}
+.header__actions__nav ul.nav li a i.open {
+  transform: rotate(90deg);
+  transition: 0.5s ease;
+}
+.header__actions__nav ul.nav li:hover {
   background: hsl(0, 0%, 100%);
 }
-.header__actions .header__nav ul li:hover a:after {
+.header__actions__nav ul.nav li:hover a:after {
   width: 0%;
   height: 0.2rem;
   background-color: hsl(0, 0%, 100%);
   display: block;
   transition: 0.5s ease;
 }
-.header__actions .header__nav__btn {
+.header__actions__nav ul.nav ul.drop {
+  background: red;
+  margin: 0 3rem;
+  max-height: 0rem;
+  overflow: hidden;
+}
+.header__actions__nav ul.nav ul.drop li a {
+  font-size: 1rem;
+}
+.header__actions__nav__btn {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -107,7 +125,7 @@ body {
   background: #ffffff;
   padding: 5rem 4rem;
 }
-.header__actions .header__nav__btn a {
+.header__actions__nav__btn a {
   font-family: "Raleway", sans-serif;
   border: 1px solid hsl(294, 54%, 27%);
   border-radius: 0.5rem;
@@ -117,10 +135,10 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
 }
-.header__actions .header__nav__btn a:first-child {
+.header__actions__nav__btn a:first-child {
   color: hsl(294, 54%, 27%);
 }
-.header__actions .header__nav__btn a:last-child {
+.header__actions__nav__btn a:last-child {
   color: hsl(0, 0%, 100%);
   background: hsl(294, 54%, 27%);
 }
