@@ -44,7 +44,7 @@ body {
   background: transparent;
 }
 .header.white .container {
-  background: blue;
+  background: hsl(294, 54%, 27%);
   border-radius: 3rem;
   margin-top: 5rem;
   transition: 2s ease;
@@ -387,6 +387,13 @@ body {
   vertical-align: middle;
   line-height: 2rem;
 }
+.banner__right video {
+  padding: unset;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 @media screen and (min-width: 940px) {
   .banner {
     padding-left: 2rem;
@@ -397,6 +404,7 @@ body {
     gap: 2rem;
     align-content: center;
     padding-bottom: 6rem;
+    width: 40rem;
   }
   .banner__wrapper video {
     position: relative;
@@ -412,7 +420,7 @@ body {
   }
   .banner__text h1 {
     text-align: left;
-    font-size: 6rem;
+    font-size: 5rem;
     line-height: 7rem;
   }
   .banner__text h4 {
@@ -442,8 +450,12 @@ body {
     align-items: center;
     vertical-align: middle;
   }
+  .banner__right video {
+    transform: translateX(15rem);
+  }
 }
 
+/*-----SECTION------*/
 .section {
   background: hsl(34, 42%, 93%);
 }
@@ -454,10 +466,14 @@ body {
 }
 .section__items {
   padding: 3rem 0;
-  padding-right: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  padding-right: 3rem;
+}
+.section__items .section__items__vids video {
+  max-width: 60rem;
+  transform: translateX(-20rem);
+}
+.section__items__text {
+  padding-top: 3rem;
 }
 .section__items__text h2 {
   font-size: 3rem;
@@ -468,7 +484,7 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  line-height: 2rem;
+  line-height: 2.25rem;
 }
 .section__items__text a {
   color: #2997FF;
@@ -476,9 +492,16 @@ body {
 .section__items__text a i {
   margin-left: 1rem;
 }
-.section__items__vids:nth-child(even) video {
-  max-width: 30rem;
-  transform: translateX(-2rem);
+.section .section__items:nth-child(odd) {
+  padding-right: unset;
+  padding-left: 3rem;
+}
+.section .section__items:nth-child(odd) .section__items__vids video {
+  transform: translateX(2rem);
+  right: 0;
+}
+.section .section__items:nth-child(odd) .section__items__text {
+  text-align: right;
 }
 .section__companies {
   display: flex;
@@ -488,6 +511,7 @@ body {
 }
 .section__companies h5 {
   font-size: 1.5rem;
+  padding: 0 2rem;
 }
 .section__companies__images {
   display: flex;
@@ -530,5 +554,43 @@ body {
   }
   .section__companies__images {
     gap: 5rem;
+    margin-bottom: 5rem;
+  }
+  .section__items {
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+  }
+  .section__items__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: unset;
+  }
+  .section__items__text h2 {
+    font-size: 5.5rem;
+    line-height: 6rem;
+    margin-bottom: unset;
+  }
+  .section__items__text p {
+    line-height: 2.5rem;
+    margin-bottom: unset;
+  }
+  .section__items__text a {
+    text-align: left;
+    left: 0;
+  }
+  .section__items .section__items__vids video {
+    transform: translateX(-2rem);
+  }
+  .section .section__items:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  .section .section__items:nth-child(odd) .section__items__text a {
+    text-align: right;
+  }
+  .section .section__items:nth-child(odd) .section__items__vids video {
+    transform: translateX(2rem);
   }
 }/*# sourceMappingURL=main.css.map */
