@@ -47,50 +47,45 @@
         &__google{
             border-radius: 1rem;
             a{
-                display: flex;
                 border-radius: 1rem;
                 text-align: center;
-                gap: 6rem;
-                padding: .5rem .5rem;
-                .cover{
-                    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
-                    background: $clr-light;
-                    img{
-                        width: 2rem;
-                        background: $clr-light;
-                        // padding: 40px;
+                position: relative;
+                ul{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    li{
+                        img{
+                            @include imgFit(3.5rem,3.5rem);
+                            color: $clr-light;
+                            background: $clr-light;
+                            padding: .5rem;
+                            left: 0;
+                            position: absolute;
+                        }
+                    }
+                    li:last-child{
+                        color: $clr-light;
+                        margin: unset;
                     }
                 }
-                p{
-                    color: $clr-light;
-                    margin-top: 0.9rem;
-                    margin-left: 5rem;
-                    vertical-align: middle;
-                    line-height:2rem;
-                }
-                
             }
         }
-        
     }
-    &__right{
+    .banner__right{
         video{
             padding: unset;
             @include imgFit(100%, 100%);
 
         }
     }
-    
-
     @include mediaQuery($break-lg){
-        padding-left: 2rem;
         &__wrapper{
             display: flex;
             flex-direction: row;
             gap: 2rem;
             align-content: center;
             padding-bottom: 6rem;
-            width: 40rem;
             video{
                 position: relative;
                 @include imgFit(100%, 100%);
@@ -98,6 +93,9 @@
             }
         }
         &__left{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
             h3{
                 color: $clr-light;                
                 display: unset;
@@ -106,7 +104,7 @@
         &__text{
             h1{
                 text-align: left;
-                font-size: 5rem;
+                font-size: 6rem;
                 line-height: 7rem;
             }
             h4{
@@ -129,10 +127,22 @@
                     align-items: center;
                     padding: 10px 20px;
                     gap: 1rem;
-                    p{
-                        margin: unset;
-                        align-items: center;
-                        vertical-align: middle;
+                    position: relative;
+                    ul{
+                        gap: 2rem;
+                        li{
+                            img{
+                                @include imgFit(3.5rem,3.5rem);
+                                color: $clr-light;
+                                background: $clr-light;
+                                padding: .5rem;
+                                position: absolute;
+                            }
+                        }
+                        li:last-child{
+                            margin: unset;
+                            padding: 10px 40px;
+                        }
                     }
                 }
             }
@@ -143,51 +153,68 @@
             }
         }
     }
-}
+}    
+
+
+
 
 
 /*-----SECTION------*/
 .section{
 background: $clr-fwhite;
     &__wrapper{
-        padding: 2rem 0;
+        padding: 2rem 1rem;
         display: flex;
         flex-direction: column;
     }
     &__items{
-        padding: 3rem 0;
-        padding-right: 3rem;
+        padding: 5rem 0;
         .section__items__vids{
             video{
-                max-width: 60rem;
-                transform: translateX(-20rem);
+                max-width: 68rem;
+                transform: translateX(-27rem);
             }
         }
         &__text{
             padding-top: 3rem;
             h2{
-                font-size: 3rem;
+                font-size: 3.2rem;
                 line-height: 4rem;
-                margin-bottom: 1rem;
         
             }
             p{
-                font-size: 1.5rem;
+                font-size: 1.7rem;
                 font-weight: 600;
-                margin-bottom: 1rem;
-                line-height: 2.25rem;
+                margin: 2rem 0;
+                line-height: 3rem;
             }
             a{
-                color: #2997FF;
+                font-size: 1.7rem;
+                font-weight: unset;
                 i{
                     margin-left: 1rem;
+                    font-size: 1.7rem;
                 }
+            }
+            a::after{
+                content: "";
+                width: 0%;
+                height: .2rem;
+                background-color:$clr-dblue;
+                display:block;
+                transition: .25s ease
+            }
+            a:hover::after{
+                width: 75%;
+                transition: .25s ease;
             }
         }
     }
+    .section__items:first-child{
+
+    }
     .section__items:nth-child(odd){
         padding-right: unset;
-        padding-left: 3rem;
         .section__items__vids{
             video{
                 transform: translateX(2rem);
@@ -195,7 +222,10 @@ background: $clr-fwhite;
             } 
         }
         .section__items__text{
-            text-align: right;
+            text-align: left;
+            p{
+                margin-right: unset;
+            }
         }
     }
     &__companies{
@@ -209,12 +239,12 @@ background: $clr-fwhite;
         }
         &__images{
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+            justify-items: center;
+            max-width: 63rem;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
             gap: 2rem;
-            padding: 0 2rem;
             img{
                 &:first-child{
                     width: 11rem;
@@ -226,9 +256,13 @@ background: $clr-fwhite;
                 }
                 &:nth-child(3){
                     width: 6rem;
-                    height: 6rem;
+                    height: 3rem;
                 }
                 &:nth-child(4){
+                    width: 6rem;
+                    height: 6rem;
+                }
+                &:nth-child(5){
                     width: 24rem;
                     height: 4rem;
                 }
@@ -241,7 +275,6 @@ background: $clr-fwhite;
     }
 
     @include mediaQuery($break-lg){
-
         &__wrapper{
             justify-content: center;
             align-items: center;
@@ -251,14 +284,18 @@ background: $clr-fwhite;
             gap: 4rem;
             align-items: center;
             &__images{
-                gap: 5rem;
+                gap: 8rem;
                 margin-bottom: 5rem;
+                flex-wrap: nowrap;
             }
         }
         &__items{
             display: flex;
             flex-direction: row;
-            gap: 10rem;
+            padding-right: unset;
+            margin-right: 0;
+            gap: 24rem;
+            padding: 5rem 0;
             &__text{
                 display: flex;
                 flex-direction: column;
@@ -266,36 +303,45 @@ background: $clr-fwhite;
                 gap: 2rem;
                 padding-top: unset;
                 h2{
-                    font-size: 5.5rem;
-                    line-height: 6rem;
+                    font-size: 5.3rem;
+                    line-height:6rem;
                     margin-bottom: unset;
                 }
                 p{
                     line-height: 2.5rem;
                     margin-bottom: unset;
+                    font-size: 1.75rem;
+                    font-weight: unset;
+                    margin-right: unset;
+                    margin-top: 0;
                 }
                 a{
                     text-align: left;
+                    font-size: 1.75rem;
                     left: 0;
                 }
             }
             .section__items__vids{
                 video{
-                    transform: translateX(-2rem);
+                    transform: translateX(0.25rem);
+                    max-width: 67rem;
                 }
-
             }
         }
         .section__items:nth-child(odd){
             flex-direction: row-reverse;
+            padding-left: unset;
             .section__items__text{
+                text-align: unset;
+                text-align: left;
+                margin-left: 0rem;
                 a{
-                    text-align: right;
+                    text-align: left;
                 }
             }
             .section__items__vids{
                 video{
-                    transform: translateX(2rem);
+                    transform: translateX(0rem);
                 }
             }
         }
