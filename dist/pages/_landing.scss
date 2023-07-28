@@ -1,3 +1,5 @@
+/*------BANNER------*/
+
 .banner{
     background: $clr-primary;
     position: relative;
@@ -79,6 +81,8 @@
 
         }
     }
+
+    /*------BANNER-DESKTOP-------*/
     @include mediaQuery($break-lg){
         &__wrapper{
             display: flex;
@@ -180,7 +184,6 @@ background: $clr-fwhite;
             h2{
                 font-size: 3.2rem;
                 line-height: 4rem;
-        
             }
             p{
                 font-size: 1.7rem;
@@ -191,27 +194,13 @@ background: $clr-fwhite;
             a{
                 font-size: 1.7rem;
                 font-weight: unset;
+                
                 i{
                     margin-left: 1rem;
                     font-size: 1.7rem;
                 }
             }
-            a::after{
-                content: "";
-                width: 0%;
-                height: .2rem;
-                background-color:$clr-dblue;
-                display:block;
-                transition: .25s ease
-            }
-            a:hover::after{
-                width: 75%;
-                transition: .25s ease;
-            }
         }
-    }
-    .section__items:first-child{
-
     }
     .section__items:nth-child(odd){
         padding-right: unset;
@@ -273,7 +262,8 @@ background: $clr-fwhite;
             }
         }
     }
-
+    
+    /*-----SECTION-DESKTOP-----*/
     @include mediaQuery($break-lg){
         &__wrapper{
             justify-content: center;
@@ -293,8 +283,7 @@ background: $clr-fwhite;
             display: flex;
             flex-direction: row;
             padding-right: unset;
-            margin-right: 0;
-            gap: 24rem;
+            gap: 20rem;
             padding: 5rem 0;
             &__text{
                 display: flex;
@@ -305,20 +294,31 @@ background: $clr-fwhite;
                 h2{
                     font-size: 5.3rem;
                     line-height:6rem;
-                    margin-bottom: unset;
                 }
                 p{
                     line-height: 2.5rem;
                     margin-bottom: unset;
                     font-size: 1.75rem;
                     font-weight: unset;
-                    margin-right: unset;
                     margin-top: 0;
                 }
                 a{
                     text-align: left;
                     font-size: 1.75rem;
                     left: 0;
+                    width: fit-content;
+                }
+                a::after{
+                    content: "";
+                    width: 0%;
+                    height: .2rem;
+                    background-color:$clr-dblue;
+                    display: block;
+                    transition: .25s ease;
+                }
+                a:hover::after{
+                    width: 100%;
+                    transition: .25s ease;
                 }
             }
             .section__items__vids{
@@ -349,4 +349,69 @@ background: $clr-fwhite;
 }
 
 
+
+/*-----TEAMS-----*/
+
+.teams{
+    &__wrapper{
+        padding: 3rem 0;
+    }
+    &__header{
+        display: flex;
+        flex-direction: column;
+        h2{
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.2rem;
+        }
+        p{
+            margin-bottom: 1rem;
+        }
+        &__btn{
+            display: flex;
+            flex-direction: column;
+            a{
+
+            }
+        }
+    }
+    &__stats{
+        &__items{
+            h3{
+
+            }
+            p{
+
+            }
+        }
+    }
+    &__stories{
+        video{
+            
+        }
+        h4{
+
+        }
+        p:first-child{
+
+        }
+        p:last-child{
+
+        }
+        a{
+            i{
+
+            }
+        }
+    }
+    &__survey{
+        p{
+
+        }
+    }
+}
+
+/*-----FOOTER------*/
 
