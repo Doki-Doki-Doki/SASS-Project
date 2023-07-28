@@ -1222,20 +1222,28 @@ body {
 .teams__header {
   display: flex;
   flex-direction: column;
+  text-align: center;
+  margin-bottom: 0rem;
 }
 .teams__header h2 {
   margin-top: 3rem;
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
+  font-size: 3.2rem;
   font-weight: 700;
-  line-height: 1.2rem;
+  line-height: 4rem;
 }
 .teams__header p {
-  margin-bottom: 1rem;
+  margin: 16px 0;
 }
 .teams__header__btn {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+}
+.teams__header__btn a {
+  text-align: center;
+}
+.teams__stats {
+  margin-top: 10rem;
 }
 /*-----FOOTER------*/
 .footer__left li {
@@ -1253,7 +1261,6 @@ body {
   width: 100%;
   height: 100%;
   position: fixed;
-  background: blue;
   top: auto;
   left: 0;
   right: 0;
@@ -1268,4 +1275,14 @@ body {
   background: transparent;
   border: 0 solid transparent;
   font-size: 2.5rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 940px) {
+  .footer__left .modal {
+    border: 1px solid black;
+    max-width: 72rem;
+    height: auto;
+    margin: 0 auto;
+    bottom: 15rem;
+  }
 }/*# sourceMappingURL=main.css.map */
