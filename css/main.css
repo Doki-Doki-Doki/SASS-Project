@@ -1067,7 +1067,7 @@ body {
 }
 .section__items__text p {
   font-size: 1.7rem;
-  font-weight: 600;
+  font-weight: 500;
   margin: 2rem 0;
   line-height: 3rem;
 }
@@ -1243,7 +1243,55 @@ body {
   text-align: center;
 }
 .teams__stats {
-  margin-top: 10rem;
+  margin: 8rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.teams__stats__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.teams__stats__items h3 {
+  font-size: 5rem;
+  font-weight: 670;
+  color: hsl(294, 54%, 27%);
+}
+.teams__stats__items p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  max-width: 170px;
+  text-align: center;
+}
+.teams__stories {
+  padding: 0 2rem;
+}
+.teams__stories video {
+  width: 50rem;
+  height: 22rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: translateX(-6rem);
+  border-top-right-radius: 11rem;
+  border-bottom-right-radius: 11rem;
+  margin-bottom: 8rem;
+}
+.teams__stories h4 {
+  font-size: 2.2rem;
+  font-style: oblique;
+  font-weight: unset;
+  margin-bottom: 1.5rem;
+}
+.teams__stories p {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.teams__stories p:last {
+  font-weight: unset;
+}
+.teams__stories a i {
+  margin-left: 1rem;
 }
 /*-----FOOTER------*/
 .footer__left li {
