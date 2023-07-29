@@ -812,7 +812,7 @@ body {
   left: 0;
   transition: 0.5s ease;
   z-index: -1;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 .btn.bg--primary:hover::before {
   width: 100%;
@@ -841,7 +841,7 @@ body {
   left: 0;
   transition: 0.5s ease;
   z-index: -1;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 .btn.bg--light:hover::before {
   width: 100%;
@@ -870,7 +870,7 @@ body {
   left: 0;
   transition: 0.5s ease;
   z-index: -1;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 .btn.bg--blue:hover::before {
   width: 100%;
@@ -1266,6 +1266,7 @@ body {
 }
 .teams__stories {
   padding: 0 2rem;
+  margin-bottom: 4rem;
 }
 .teams__stories video {
   width: 50rem;
@@ -1275,24 +1276,104 @@ body {
   transform: translateX(-6rem);
   border-top-right-radius: 11rem;
   border-bottom-right-radius: 11rem;
-  margin-bottom: 8rem;
+  margin-bottom: 7rem;
 }
-.teams__stories h4 {
+.teams__stories__text h4 {
   font-size: 2.2rem;
   font-style: oblique;
   font-weight: unset;
   margin-bottom: 1.5rem;
 }
-.teams__stories p {
+.teams__stories__text p {
   font-weight: 600;
+}
+.teams__stories__text #test {
+  font-weight: unset;
   margin-bottom: 1.5rem;
 }
-.teams__stories p:last {
-  font-weight: unset;
+.teams__stories__text a {
+  color: #1264a3;
 }
-.teams__stories a i {
+.teams__stories__text a i {
   margin-left: 1rem;
 }
+.teams__stories__text a::after {
+  content: "";
+  width: 0%;
+  height: 0.2rem;
+  background-color: #1264a3;
+  display: block;
+  transition: 0.25s ease;
+}
+.teams__stories__text a:hover::after {
+  width: 52%;
+  transition: 0.25s ease;
+}
+.teams__survey {
+  padding: 0 1.5rem;
+}
+.teams__survey p {
+  color: #696969;
+  font-size: 1.2rem;
+  text-align: center;
+}
+@media screen and (min-width: 940px) {
+  .teams__header {
+    align-items: center;
+  }
+  .teams__header h2 {
+    font-size: 4.5rem;
+    margin-bottom: 1.3rem;
+  }
+  .teams__header p {
+    margin-bottom: 3rem;
+  }
+  .teams__header__btn {
+    flex-direction: row;
+    gap: 0.7rem;
+  }
+  .teams__header__btn a {
+    font-size: 1.25rem;
+    font-weight: 550;
+    border-radius: 0.5rem;
+    padding: 1.8rem 5rem;
+  }
+  .teams__stats {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .teams__stories {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+  .teams__stories video {
+    width: 80rem;
+    height: 32rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transform: translateX(-5rem);
+    border-top-right-radius: 16rem;
+    border-bottom-right-radius: 16rem;
+  }
+  .teams__stories__text {
+    max-width: 54rem;
+  }
+  .teams__stories__text h4 {
+    font-size: 2.6rem;
+    font-weight: unset;
+    margin-bottom: 2.6rem;
+  }
+  .teams__stories__text #test {
+    margin-bottom: 2.6rem;
+  }
+  .teams__stories__text a:hover::after {
+    width: 40%;
+  }
+  .teams__survey p {
+    font-size: 1.4rem;
+  }
+}
+
 /*-----FOOTER------*/
 .footer__left li {
   font-size: 1.4rem;

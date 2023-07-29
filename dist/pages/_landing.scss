@@ -403,36 +403,112 @@ background: $clr-fwhite;
     }
     &__stories{
         padding: 0 2rem;
+        margin-bottom: 4rem;
         video{
             @include imgFit(50rem, 22rem);
             transform: translateX(-6rem);
             border-top-right-radius: 11rem;
             border-bottom-right-radius: 11rem;
-            margin-bottom: 8rem;
+            margin-bottom: 7rem;
         }
-        h4{
-            font-size: 2.2rem;
-            font-style: oblique;
-            font-weight: unset;
-            margin-bottom: 1.5rem;
+        &__text{
+            h4{
+                font-size: 2.2rem;
+                font-style: oblique;
+                font-weight: unset;
+                margin-bottom: 1.5rem;
+            }
+            p{
+                font-weight: 600;
+            }
+            #test{
+                font-weight: unset;
+                margin-bottom: 1.5rem;
+            }
+            a{
+                color: $clr-dblue;
+                i{
+                    margin-left: 1rem;
+                }
+            }
+            a::after{
+                content: "";
+                width: 0%;
+                height: .2rem;
+                background-color: $clr-dblue;
+                display: block;
+                transition: .25s ease;
+            }
+            a:hover::after{
+
+                width: 52%;
+                transition: .25s ease;
+            }
+        }   
+    }
+    &__survey{
+        padding: 0 1.5rem;
+        p{
+            color: $clr-sgray;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    }
+
+    @include mediaQuery($break-lg){
+    &__header{
+        align-items: center;
+        h2{
+            font-size: 4.5rem;
+            margin-bottom: 1.3rem;
         }
         p{
-            font-weight: 600;
-            margin-bottom: 1.5rem;
+            margin-bottom: 3rem;
         }
-        p:last{
-            font-weight: unset;
+        &__btn{
+            flex-direction: row;
+            gap: 0.7rem;
+            a{
+                font-size: 1.25rem;
+                font-weight: 550;
+                border-radius: 0.5rem;
+                padding: 1.8rem 5rem;
+            }
         }
-        a{
-            i{
-                margin-left: 1rem;
+    }
+    &__stats{
+        flex-direction: row;
+        justify-content: center;
+    }
+    &__stories{
+        display: flex;
+        margin-bottom: 2rem;
+        video{
+            @include imgFit (80rem, 32rem);
+            transform: translateX(-5rem);
+            border-top-right-radius: 16rem;
+            border-bottom-right-radius: 16rem;
+        }
+        &__text{
+            max-width: 54rem;
+            h4{
+                font-size: 2.6rem;
+                font-weight: unset;
+                margin-bottom: 2.6rem;
+            }
+            #test{
+                margin-bottom: 2.6rem;
+            }
+            a:hover::after{
+                width: 40%;
             }
         }
     }
     &__survey{
         p{
-
+            font-size: 1.4rem;
         }
+    }
     }
 }
 
