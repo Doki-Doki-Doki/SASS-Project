@@ -6,9 +6,12 @@
     <title>Slack - Home</title>
     <link rel="stylesheet" href="/css/main.css">
     <script src="https://kit.fontawesome.com/1ba77166a6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 </head>
 <body>
-    <div id="overlay"></div>
+    <div id="overlay">
+
+    </div>
     <header class="header">
         <div class="container">
             <div class="header__wrapper d--flex">
@@ -180,6 +183,70 @@
         </div>
     </section>
 
+    <section class="work">
+        <div class="container">
+            <div class="work__wrapper">
+                <h3>Take a deeper dive into a new way to work</h3>
+                <div class="slider">
+                    <div class="card">
+                        <div class="slider__item">
+                            <img src="./components/img/promo-boost-productivity2x.jpg" alt="">
+                            <div class="slider__content">
+                                <h5>Customer Story</h5>
+                                <h3>The next big thing.</h3>
+                                <div class="slider__actions">
+                                    <a href="#">Read more</a>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="slider__item">
+                            <img src="./components/img/promo-boost-productivity2x.jpg" alt="">
+                            <div class="slider__content">
+                                <h5>Customer Story</h5>
+                                <h3>The next big thing.</h3>
+                                <div class="slider__actions">
+                                    <a href="#">Read more</a>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="slider__item">
+                            <img src="./components/img/promo-boost-productivity2x.jpg" alt="">
+                            <div class="slider__content">
+                                <h5>Customer Story</h5>
+                                <h3>The next big thing.</h3>
+                                <div class="slider__actions">
+                                    <a href="#">Read more</a>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="slider__item">
+                            <img src="./components/img/promo-boost-productivity2x.jpg" alt="">
+                            <div class="slider__content">
+                                <h5>Customer Story</h5>
+                                <h3>The next big thing.</h3>
+                                <div class="slider__actions">
+                                    <a href="#">Read more</a>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <footer class="footer">
         <div class="container">
             <div class="footer__wrapper">
@@ -196,6 +263,31 @@
                             <div class="modal">
                                 <button id="closeModal">x</button>
                                 <h2>Change Region</h2>
+                                <p>Selecting a different region will change the language and content of slack.com.</p>
+                                <ul>
+                                    <li id="list1">
+                                        <h4>AMERICAS</h4>
+                                        <a href="">Latinoamérica (español)</a>
+                                        <a href="">Brasil (português)</a>
+                                        <a href="" id="US">United States (English)</a>
+                                    </li>
+                                    <li id="list2">
+                                        <h4>EUROPE</h4>
+                                        <a href="">Deutschland (Deutsch)</a>
+                                        <a href="">España (español)</a>
+                                        <a href="">France (français)</a>
+                                        <a href="">Italia (italiano)</a>
+                                        <a href="">United Kingdom (English)</a>
+                                    </li>
+                                    <li id="list3">
+                                        <h4>ASIA PACIFIC</h4>
+                                        <a href="">简体中文</a>
+                                        <a href="">繁體中文</a>
+                                        <a href="">India (English)</a>
+                                        <a href="">日本 (日本語)</a>
+                                        <a href="">대한민국 (한국어)</a>
+                                    </li>
+                                </ul>
                             </div>
                         </li>
                     </ul>
@@ -207,6 +299,8 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="../JS/javascript.js"></script>
+    
 </body>
 </html>

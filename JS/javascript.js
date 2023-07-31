@@ -42,5 +42,26 @@ const closeModalHandler = () =>{
     overlay.classList.toggle('active')
 }
 
-btnClose.addEventListener('click',closeModalHandler)
+const closeOverlay = () => { 
+    modal.classList.toggle('active');
+    btnRegion.classList.toggle('active')
+    overlay.classList.toggle('active')
+}
+
+var slider = tns({
+    container: '.slider',
+    items: 1,
+    slideBy: 'page',
+    autoplay: false,
+    mouseDrag: true,
+    navPosition: "bottom",
+    responsive: {
+        900: {
+            items: 4
+        }
+    }
+})
+
+btnClose.addEventListener('click',closeModalHandler);
 btnRegion.addEventListener('click',openModalHandler);
+overlay.addEventListener('click',closeOverlay);
