@@ -26,15 +26,20 @@ window.addEventListener("scroll", () => {
 const modal = document.querySelector('.modal');
 const btnRegion = document.querySelector('.region');
 const btnClose = document.querySelector('#closeModal');
+const overlay = document.querySelector('#overlay');
+
+console.log(overlay);
 
 const openModalHandler = () =>{
     btnRegion.classList.toggle('active')
     btnRegion.nextElementSibling.classList.toggle('active')
+    overlay.classList.toggle('active')
 }
 
 const closeModalHandler = () =>{
     modal.classList.toggle('active');
     btnRegion.classList.toggle('active')
+    overlay.classList.toggle('active')
 }
 
 btnClose.addEventListener('click',closeModalHandler)
