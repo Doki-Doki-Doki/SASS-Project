@@ -544,6 +544,12 @@ background: $clr-fwhite;
         margin: 0 auto;
         padding: 1rem;
         background-color: $clr-light;
+        transform: scale(1);
+        transition: 0.25s ease-in-out;
+        &:hover{
+            transform: scale(1.1);
+            transition: 0.25s ease-in-out;
+        }
         h5{
             font-size: 1.4rem;
             font-weight: lighter;
@@ -570,6 +576,10 @@ background: $clr-fwhite;
                 bottom: 3%;
                 a{
                     color: $clr-dblue;
+                    i{
+                        font-size: 2rem;
+                        margin-left: 16rem;
+                    }
                 }
             }
         }
@@ -645,6 +655,27 @@ background: $clr-fwhite;
             }
         }
     }
+
+    @include mediaQuery ($break-lg){
+    clip-path: ellipse(75% 100% at center top);
+        &__wrapper{
+            padding-top: 10rem;
+        }
+        h2{
+            font-size: 4.5rem;
+            margin-bottom: 4.5rem;
+        }
+        &__btn{
+            flex-direction: row;
+            justify-content: center;
+            max-width: 50rem;
+            gap: 0.8rem;
+            margin: 0 auto;
+            a{
+                padding: 2rem 4rem;
+            }
+        }
+    }
 }
 
 //INFO SECTION
@@ -652,6 +683,7 @@ background: $clr-fwhite;
     &__wrapper{
         border-bottom: 2px solid rgba(105, 105, 105, 0.3);
         padding-bottom: 3rem;
+        border-bottom: unset;
     }
     &__logo{
         padding: 3rem 0;
@@ -669,6 +701,27 @@ background: $clr-fwhite;
             a{
                 font-size: 1.3rem;
                 color: #454245;
+            }
+        }
+    }
+
+    @include mediaQuery ($break-lg){
+        &__wrapper{
+            display: flex;
+            justify-content: center;
+            gap: 10rem;
+            padding-top: 5rem;
+            padding-bottom: 1rem;
+        }
+        &__logo{
+            padding-top: 0;
+        }
+        &__text{
+            display: flex;
+            gap: 10rem;
+            &__column{
+                display: flex;
+                flex-direction: column;
             }
         }
     }

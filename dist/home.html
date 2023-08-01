@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slack - Home</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="./scss/main.css">
     <script src="https://kit.fontawesome.com/1ba77166a6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 </head>
@@ -308,57 +308,59 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__wrapper">
-                <div class="footer__left">
-                    <ul>
-                        <li><a href="#">Status</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Your Privacy Choices</a></li>
-                        <li><a href="#">Cookie Preferences</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li>
-                            <a class="region" href="javascript:void(0)">Change Region</a>
-                            <div class="modal">
-                                <button id="closeModal">x</button>
-                                <h2>Change Region</h2>
-                                <p>Selecting a different region will change the language and content of slack.com.</p>
-                                <ul>
-                                    <li id="list1">
-                                        <h4>AMERICAS</h4>
-                                        <a href="">Latinoamérica (español)</a>
-                                        <a href="">Brasil (português)</a>
-                                        <a href="" id="US">United States (English)</a>
-                                    </li>
-                                    <li id="list2">
-                                        <h4>EUROPE</h4>
-                                        <a href="">Deutschland (Deutsch)</a>
-                                        <a href="">España (español)</a>
-                                        <a href="">France (français)</a>
-                                        <a href="">Italia (italiano)</a>
-                                        <a href="">United Kingdom (English)</a>
-                                    </li>
-                                    <li id="list3">
-                                        <h4>ASIA PACIFIC</h4>
-                                        <a href="">简体中文</a>
-                                        <a href="">繁體中文</a>
-                                        <a href="">India (English)</a>
-                                        <a href="">日本 (日本語)</a>
-                                        <a href="">대한민국 (한국어)</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer__right">
-                    <a href=""><img src="./components/img/vector2.svg" alt=""></i>Download Slack</a>
-                    <div class="footer__right__icons">
+                <div class="footer__content">
+                    <div class="footer__left">
                         <ul>
-                            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa-brands fa-square-facebook"></i></a></li>
-                            <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-                            <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
+                            <li><a href="#">Status</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#"><i class="fa-solid fa-toggle-on"></i>  Your Privacy Choices</a></li>
+                            <li><a href="#">Cookie Preferences</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li>
+                                <a class="region" href="javascript:void(0)"><i class="fa-solid fa-globe"></i>  Change Region  <i class="fa-solid fa-chevron-down"></i></a>
+                                <div class="modal">
+                                    <button id="closeModal">x</button>
+                                    <h2>Change Region</h2>
+                                    <p>Selecting a different region will change the language and content of slack.com.</p>
+                                    <ul>
+                                        <li id="list1">
+                                            <h4>AMERICAS</h4>
+                                            <a href="">Latinoamérica (español)</a>
+                                            <a href="">Brasil (português)</a>
+                                            <a href="" id="US">United States (English)</a>
+                                        </li>
+                                        <li id="list2">
+                                            <h4>EUROPE</h4>
+                                            <a href="">Deutschland (Deutsch)</a>
+                                            <a href="">España (español)</a>
+                                            <a href="">France (français)</a>
+                                            <a href="">Italia (italiano)</a>
+                                            <a href="">United Kingdom (English)</a>
+                                        </li>
+                                        <li id="list3">
+                                            <h4>ASIA PACIFIC</h4>
+                                            <a href="">简体中文</a>
+                                            <a href="">繁體中文</a>
+                                            <a href="">India (English)</a>
+                                            <a href="">日本 (日本語)</a>
+                                            <a href="">대한민국 (한국어)</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
+                    </div>
+                    <div class="footer__right">
+                        <a href=""><img src="./components/img/vector2.svg" alt=""></i>Download Slack</a>
+                        <div class="footer__right__icons">
+                            <ul>
+                                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fa-brands fa-square-facebook"></i></a></li>
+                                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                                <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="footer__copyright">
