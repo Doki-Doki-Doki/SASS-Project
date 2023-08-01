@@ -1,11 +1,16 @@
 .footer{
+    display: flex;
+    flex-direction: column;
     &__left{
         li{
             font-size: 1.4rem;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             font-weight: bold;
             a{
                 color: $clr-dark;
+            }
+            a:hover{
+                color: $clr-dblue;
             }
         }
         .modal{
@@ -81,8 +86,52 @@
                 }
             }
         }
+    }
+    &__right{
+        display: flex;
+        flex-direction: column;
+        a{
+            display: flex;
+            align-items: center;
+            padding: 1.5rem 0;
+            color: $clr-dblue;
+            font-size: 1.4rem;
+            font-weight: bold;
+            gap: 0.5rem;
+            i{
+                margin-right: 1rem;
+            }
+        }
+        &__icons{
+            padding: 1.5rem 0;
+            ul{
+                display: flex;
+                justify-content: space-between;
+                li{
+                    a{
+                        color: $clr-dark;
+                        i{
+                            font-size: 2.2rem;
+                        }
+                    }
+                    a:hover{
+                        color: $clr-dblue;
+                    }
+                }
+            }
+        }
+    }
+    &__copyright{
+        padding-top: 1.5rem;
+        p{
+            font-size: 1.3rem;
+            color: $clr-sgray;
+            line-height: 2rem;
+        }
+    }    
 
-        @include mediaQuery($break-lg){
+    @include mediaQuery($break-lg){
+        &__left{
             .modal{
                 border: 1px solid black;
                 max-width: 72rem;

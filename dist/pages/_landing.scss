@@ -187,7 +187,7 @@ background: $clr-fwhite;
             }
             p{
                 font-size: 1.7rem;
-                font-weight: 500;
+                font-weight: 600;
                 margin: 2rem 0;
                 line-height: 3rem;
             }
@@ -283,7 +283,7 @@ background: $clr-fwhite;
             display: flex;
             flex-direction: row;
             padding-right: unset;
-            gap: 20rem;
+            gap: 16rem;
             padding: 5rem 0;
             &__text{
                 display: flex;
@@ -530,14 +530,17 @@ background: $clr-fwhite;
 .work{
     background-color: $clr-fwhite;
     &__wrapper{
-        padding: 2rem 0;
+        padding: 4rem 1rem 0rem;
         h3{
+            font-size: 2.4rem;
             text-align: center;
+            margin-bottom: 2rem;
+            line-height: 3.2rem;
         }
     }
     .slider__item{
-        height: 40rem;
-        width: 25rem;
+        height: 45rem;
+        width: 30rem;
         margin: 0 auto;
         padding: 1rem;
         background-color: $clr-light;
@@ -553,6 +556,22 @@ background: $clr-fwhite;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            h5{
+                margin: 1rem 0;
+                padding: unset;
+            }
+            h3{
+                text-align: left;
+                margin: unset;
+                font-size: 2.3rem;
+            }
+            .slider__actions{
+                position: absolute;
+                bottom: 3%;
+                a{
+                    color: $clr-dblue;
+                }
+            }
         }
     }
     .tns-controls,
@@ -562,7 +581,8 @@ background: $clr-fwhite;
     }
 
     .tns-nav{
-        padding: 2rem 0;
+        padding-top: 4rem;
+        padding-bottom: 2.5rem;
         display: flex;
         justify-content: center;
         gap: 2rem;
@@ -592,6 +612,64 @@ background: $clr-fwhite;
             left: -.5rem;
             border-radius: 50%;
             border: 1px dashed $clr-primary;
+        }
+    }
+}
+
+//ACCOMPLISH
+.accomplish{
+    background: $clr-dprimary;
+    clip-path: ellipse(105% 100% at center top);
+    &__wrapper{
+        padding: 7rem 0 9.6rem;
+        h2{
+            font-size: 3rem;
+            color: $clr-light;
+            text-align: center;
+            padding: 0 2rem;
+            line-height: 3.5rem;
+            margin-bottom: 3.2rem;
+        }
+    }
+    &__btn{
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        font-size: 1.5rem;
+        text-align: center;
+        .bg{
+            &--light{
+                &::before{
+                    background-color: $clr-dprimary;
+                }
+            }
+        }
+    }
+}
+
+//INFO SECTION
+.info{
+    &__wrapper{
+        border-bottom: 2px solid rgba(105, 105, 105, 0.3);
+        padding-bottom: 3rem;
+    }
+    &__logo{
+        padding: 3rem 0;
+    }
+    &__text{
+        display: flex;
+        justify-content: space-between;
+        &__column{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            h5{
+                font-weight: 750;
+            }
+            a{
+                font-size: 1.3rem;
+                color: #454245;
+            }
         }
     }
 }

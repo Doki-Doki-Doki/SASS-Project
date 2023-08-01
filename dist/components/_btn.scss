@@ -5,7 +5,7 @@
     color: $clr-dark;
     font-weight: 550;
     position: relative;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     &.bg{
         &--primary{
             background: $clr-primary;
@@ -91,6 +91,35 @@
                 color: $clr-light;
                 z-index: 999;
                 border: 1px solid $clr-light;
+                transition: 0.5s ease;
+            }
+        }
+        &--dprimary{
+            background: $clr-dprimary;
+            color: $clr-light;
+            border: 1px solid $clr-light;
+            &::before{
+                content: "";
+                width: 0%;
+                height: 100%;
+                background-color: $clr-light;
+                transform: skewX(45degrees);
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: 0.5s ease;
+                z-index: -1;
+                border-radius: 0.5rem;
+            }
+            &:hover::before{
+                width: 100%;
+                transition: 0.5s ease;
+            }
+            &:hover{
+                color: $clr-dprimary;
+                z-index: 999;
+                border: 1px solid $clr-dprimary;
                 transition: 0.5s ease;
             }
         }
