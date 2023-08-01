@@ -1,6 +1,10 @@
 .footer{
     display: flex;
     flex-direction: column;
+    &__content{
+        display: flex;
+        flex-direction: column;
+    }
     &__left{
         li{
             font-size: 1.4rem;
@@ -153,9 +157,6 @@
                 }
             }
         }
-    }
-
-    
         &__wrapper{
             display: flex;
             flex-direction: column;
@@ -216,5 +217,7 @@
                 color: $clr-dark;
             }
         }
+    }
+        
     
 }
