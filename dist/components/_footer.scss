@@ -17,6 +17,14 @@
                 color: $clr-dblue;
             }
         }
+        li:nth-child(4){
+            i{
+                font-size: 2rem;
+                align-items: center;
+                vertical-align: middle;
+                color: $clr-dblue;
+            }
+        }
         .modal{
             padding: 3rem 6.5rem;
             overflow-y: auto;
@@ -98,7 +106,7 @@
             }
         }
         &__icons{
-            padding: 1.5rem 0;
+            padding: 0.2rem 0;
             ul{
                 display: flex;
                 justify-content: space-between;
@@ -164,9 +172,10 @@
         }
         &__content{
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            gap: 8rem;
+            gap: 22rem;
         }
         &__left{
             ul{
